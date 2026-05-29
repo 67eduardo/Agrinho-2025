@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estufa Sustentável: Agro Forte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Estufa de Tomates Sustentável 🍅</h1>
+            <p class="subtitle">Agro Forte: O Futuro é o Equilíbrio</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="stat-box">
+                <label>📈 Eficiência de Produção: <span id="prod-val">50</span>%</label>
+                <div class="bar-container">
+                    <div id="prod-bar" class="bar prod-color" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="stat-box">
+                <label>🌳 Sustentabilidade: <span id="sust-val">50</span>%</label>
+                <div class="bar-container">
+                    <div id="sust-bar" class="bar sust-color" style="width: 50%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="greenhouse">
+            <div id="tomato-stage" class="tomato-emoji">🌱</div>
+            <div id="alert-box" class="alert neutral">Estufa preparada. Clique em iniciar!</div>
+        </div>
+
+        <div class="score-board">
+            <h3>Progresso da Colheita</h3>
+            <p><strong id="score">0</strong> / 100 kg de Tomates Ecológicos</p>
+            <div class="bar-container-total">
+                <div id="game-progress" class="bar-progress" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btn-water" onclick="handleAction('agua')" disabled>💧 Irrigação por Gotejamento</button>
+            <button id="btn-fertilize" onclick="handleAction('adubo')" disabled>🍃 Nutrição Orgânica</button>
+            <button id="btn-pest" onclick="handleAction('praga')" disabled>🐞 Manejo Biológico</button>
+        </div>
+
+        <button id="btn-start" onclick="startGame()">Iniciar Produção</button>
+
+        <div id="game-over-screen" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="game-over-title">Fim de Ciclo</h2>
+                <p id="game-over-msg"></p>
+                <button onclick="resetGame()">Recomeçar Cultivo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
